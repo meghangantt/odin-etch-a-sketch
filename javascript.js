@@ -1,10 +1,10 @@
 let gridBase = 16;
+const grid = document.querySelector('#grid');
+const square = document.createElement('div');
 
 const createGrid = () => {
-    const grid = document.querySelector('#grid');
     grid.style.cssText = `grid-template-columns: repeat(${gridBase}, auto)`;
 
-    const square = document.createElement('div');
     square.classList.add('square');
     square.style.cssText = `height: ${500/gridBase}px; width: ${500/gridBase}px`;
     
@@ -15,7 +15,6 @@ const createGrid = () => {
     }
     
     const allSquares = document.querySelectorAll('.square');
-    
     allSquares.forEach((square) => {
         square.addEventListener('mouseover', () => {
             square.classList.add('hovered');
@@ -25,3 +24,16 @@ const createGrid = () => {
 
 createGrid();
 
+const clearGrid = () => {
+    const allSquares = document.querySelectorAll('.square');
+    allSquares.forEach((square) => {
+        square.remove();
+    })
+}
+
+const setBaseBtn = document.querySelector('#setBase');
+setBaseBtn.addEventListener('click', () => {
+    clearGrid();
+    gridBase = prompt('Enter a value:');
+    createGrid();
+});
