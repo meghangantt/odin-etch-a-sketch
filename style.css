@@ -13,6 +13,6 @@
     box-sizing: border-box;
 }
 
-.square:hover {
-    background-color: black;
+.hovered {
+    background-color: lightgray;
 }
