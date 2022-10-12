@@ -1,15 +1,11 @@
 #grid {
-    box-sizing: border-box;
     border: 4px solid olive;
     display: grid;
-    grid-template-columns: repeat(16, auto);
-    width: min-content;
+    width: 500px;
 }
 
 .square {
     border: 2px solid goldenrod;
-    width: 20px;
-    height: 20px;
     box-sizing: border-box;
 }
 
