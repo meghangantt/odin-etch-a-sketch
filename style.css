@@ -1,0 +1,9 @@
+#grid {
+    border: 10px solid olive;
+}
+
+.square {
+    border: 5px solid goldenrod;
+    width: 10px;
+    height: 10px;
+}
