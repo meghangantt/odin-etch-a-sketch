@@ -6,10 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Silkscreen&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="grid"></div>
-    <button id="setBase">Set Grid Base</button>
+    <div id="toy">
+        <p class="easText">Etch A Sketch</p>
+        <div id="grid"></div>
+        <div class="notchContainer">
+            <div class="notch left"></div>
+            <button class="notch right">CLEAR</button>
+        </div>
+    </div>
+    <div class="slidecontainer">
+        <p class="adjustmentText">Adjust Pixel Size:</p>
+        <input type="range" min="4" max="70" value="54" id="baseSlider">
+      </div>
     <script src="javascript.js"></script>
 </body>
 </html>

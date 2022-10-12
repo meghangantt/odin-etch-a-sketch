@@ -6,7 +6,7 @@ const createGrid = () => {
     grid.style.cssText = `grid-template-columns: repeat(${gridBase}, auto)`;
 
     square.classList.add('square');
-    square.style.cssText = `height: ${500/gridBase}px; width: ${500/gridBase}px`;
+    square.style.cssText = `height: ${350/gridBase}px; width: ${500/gridBase}px`;
     
     grid.appendChild(square);
     
@@ -27,13 +27,24 @@ createGrid();
 const clearGrid = () => {
     const allSquares = document.querySelectorAll('.square');
     allSquares.forEach((square) => {
+        square.classList.remove('hovered');
         square.remove();
     })
 }
 
-const setBaseBtn = document.querySelector('#setBase');
-setBaseBtn.addEventListener('click', () => {
+const baseSlider = document.getElementById('baseSlider');
+
+baseSlider.addEventListener('input', () => {
     clearGrid();
-    gridBase = prompt('Enter a value:');
+    gridBase = (74-baseSlider.value);
     createGrid();
-});
+  });
+
+const clearBtn = document.querySelector('.notch.right');
+
+clearBtn.addEventListener('click', () => {
+    const allSquares = document.querySelectorAll('.square');
+    allSquares.forEach((square) => {
+        square.classList.remove('hovered');
+    });
+  })
